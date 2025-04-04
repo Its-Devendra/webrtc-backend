@@ -27,7 +27,8 @@ io.on('connection', (socket: Socket) => {
 app.get('/', (req, res) => {
   res.send('Server is working!');
 });
-server.listen(3000, '0.0.0.0', () => {
-  console.log('Server is listening on port 3000');
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
 
